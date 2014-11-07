@@ -27,10 +27,17 @@
     <%= f.submit %>
   <% end %>
 
+
    <script type="template/html" id="appView">
     <h1>All Planes</h1>
     <ul id="planes"></ul>
   </script>
+
+
+  <script type="template/handlebars" id="SearchView">
+    {{ flights }}
+  </script>
+
 
   <script type="template/handlebars" id="planesView">
     {{ name }}
