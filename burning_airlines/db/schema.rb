@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141107020020) do
   create_table "planes", force: true do |t|
     t.string   "name"
     t.integer  "rows"
-    t.string   "columns"
+    t.integer  "columns"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

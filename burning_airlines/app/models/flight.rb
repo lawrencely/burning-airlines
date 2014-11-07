@@ -13,4 +13,6 @@
 #
 
 class Flight < ActiveRecord::Base
+  belongs_to :plane_id
+  has_many :reservations
 end
