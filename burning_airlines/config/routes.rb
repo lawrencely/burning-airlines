@@ -38,7 +38,7 @@
 
 Rails.application.routes.draw do
   
-  root :to => 'planes#home'
+  root :to => 'flights#home'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
