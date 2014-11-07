@@ -7,6 +7,26 @@
 </div>
 
 <!-- Fabian -->
+  <h2>New Plane</h2>
+  <%= form_for Plane.new do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :rows %><br>
+      <%= f.text_field :rows %>
+    </p>
+
+    <p>
+      <%= f.label :columns %><br>
+      <%= f.text_area :columns %>
+    </p>
+
+    <%= f.submit %>
+  <% end %>
+
    <script type="template/html" id="appView">
     <h1>All Planes</h1>
     <ul id="planes"></ul>

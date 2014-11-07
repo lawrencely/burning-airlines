@@ -4,25 +4,38 @@
   	return;
   };
 
-//   app.posts = new app.Collections.Posts();
+  //Fabian
+ 	app.planes = new app.Collection.Planes();
 
-//   app.posts.fetch().done(function () {
-//     app.router = new app.BlogRouter();
-//     Backbone.history.start();
-//   });
+ 	app.planes.fetch().done(function () {
+ 		app.router = new app.AirlineRouter();
+ 		Backbone.history.start();
+ 	});
 
-//   $('#new_post').on('submit', function (event) {
-//   	event.preventDefault();
+ 	$('#new_plane').on('submit', function (event) {
+ 		event.preventDefault();
 
-//   	var newPost = new app.Models.Post();
-//   	newPost.set('title', $('#post_title').val());
-//   	newPost.set('slug', $('#post_slug').val());
-//   	newPost.set('content', $('#post_content').val());
+ 		var newPlane = new app.Models.Plane();
+ 		newPlane.set('name', $('#plane_name').val());
+ 		newPlane.set('rows', $('#plane_rows').val());
+ 		newPlane.set('columns', $('#plane_columns').val());
 
-//   	newPost.save().done(function () {
-//   		app.posts.fetch();
-//   		app.router.navigate('', {trigger: true});
-//   	});
-//   });
+ 		newPlane.save().done(function () {
+ 			app.planes.fetch();
+ 			app.router.navigate('', {trigger: true});
+ 		});
 
-// });
+ 		this.reset();
+ 	});
+  //Fabian end
+
+  //Jacquie
+  //Jacquie end
+
+  //Phil
+  //Phil end
+
+  //Larry
+  //Larry end
+
+});
