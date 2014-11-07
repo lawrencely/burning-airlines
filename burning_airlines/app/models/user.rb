@@ -2,15 +2,17 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  password_digest :string(255)
 #
 
 class User < ActiveRecord::Base
-  has_many :reservations
+  has_many :reservations 
+  has_many :flights, through: :reservations 
 	has_secure_password
 
 	validates :name, presence: true, uniqueness: true, length: {minimum: 3}
