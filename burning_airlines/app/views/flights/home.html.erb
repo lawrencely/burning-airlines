@@ -7,6 +7,25 @@
 </div>
 
 <!-- Fabian -->
+   <script type="template/html" id="appView">
+    <h1>All Planes</h1>
+    <ul id="planes"></ul>
+  </script>
+
+  <script type="template/handlebars" id="planesView">
+    {{ name }}
+  </script>
+
+  <script type="template/handlebars" id="planeView">
+    <div class="plane">
+      <h2>Plane: {{ name }}</h2>
+      <label>Rows:</label>
+      <p>{{ rows }}</p>
+      <label>Columns: </label>
+      <p>{{ columns }}</p>
+    </div>
+  </script>
+
 <!-- Fabian end -->
 
 <!-- Jacqui -->
