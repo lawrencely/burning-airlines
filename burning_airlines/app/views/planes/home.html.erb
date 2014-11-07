@@ -1,0 +1,25 @@
+<a href="#">BurningAirlines</a>
+
+<h1>Welcome to Burning Airlines</h1>
+
+<div id="main">
+</div>
+
+<%= form_for Plane.new do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :rows %><br>
+      <%= f.text_field :rows %>
+    </p>
+
+    <p>
+      <%= f.label :columns %><br>
+      <%= f.text_area :columns %>
+    </p>
+
+    <%= f.submit %>
+  <% end %>

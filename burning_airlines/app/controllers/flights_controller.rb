@@ -3,6 +3,10 @@ class FlightsController < ApplicationController
 
   # GET /flights
   # GET /flights.json
+
+  def home
+  end
+  
   def index
     @flights = Flight.all
   end
