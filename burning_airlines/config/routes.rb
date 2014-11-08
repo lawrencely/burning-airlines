@@ -40,13 +40,13 @@
 #
 
 Rails.application.routes.draw do
-  
-  root :to => 'flights#home'
+
+  root :to => 'pages#index'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
-  
+
   resources :reservations
 
   resources :users
@@ -55,7 +55,7 @@ Rails.application.routes.draw do
 
   resources :planes
 
-  
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

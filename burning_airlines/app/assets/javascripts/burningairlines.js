@@ -4,29 +4,33 @@
   	return;
   };
 
-  //Fabian
- 	app.planes = new app.Collection.Planes();
+  console.log('burning airlines.js');
+  app.router = new app.AirlineRouter();
+  Backbone.history.start();
 
- 	app.planes.fetch().done(function () {
- 		app.router = new app.AirlineRouter();
- 		Backbone.history.start();
- 	});
+  // //Fabian
+ 	// app.planes = new app.Collection.Planes();
 
- 	$('#new_plane').on('submit', function (event) {
- 		event.preventDefault();
+ 	// app.planes.fetch().done(function () {
+ 	// 	app.router = new app.AirlineRouter();
+ 	// 	Backbone.history.start();
+ 	// });
 
- 		var newPlane = new app.Models.Plane();
- 		newPlane.set('name', $('#plane_name').val());
- 		newPlane.set('rows', $('#plane_rows').val());
- 		newPlane.set('columns', $('#plane_columns').val());
+ 	// $('#new_plane').on('submit', function (event) {
+ 	// 	event.preventDefault();
 
- 		newPlane.save().done(function () {
- 			app.planes.fetch();
- 			app.router.navigate('', {trigger: true});
- 		});
+ 	// 	var newPlane = new app.Models.Plane();
+ 	// 	newPlane.set('name', $('#plane_name').val());
+ 	// 	newPlane.set('rows', $('#plane_rows').val());
+ 	// 	newPlane.set('columns', $('#plane_columns').val());
 
- 		this.reset();
- 	});
+ 	// 	newPlane.save().done(function () {
+ 	// 		app.planes.fetch();
+ 	// 		app.router.navigate('', {trigger: true});
+ 	// 	});
+
+ 	// 	this.reset();
+ 	// });
   //Fabian end
 
   //Jacquie
