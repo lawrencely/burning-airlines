@@ -10,12 +10,11 @@
 #  plane_id      :integer
 #  created_at    :datetime
 #  updated_at    :datetime
-#  flight_id     :integer
 #
 
 class Flight < ActiveRecord::Base
   belongs_to :planes
   has_many :reservations
-
-  accepts_nested_attributes_for :planes, :reservations
 end
+
+#rid of flight id

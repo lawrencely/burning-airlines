@@ -10,7 +10,6 @@
 #  plane_id      :integer
 #  created_at    :datetime
 #  updated_at    :datetime
-#  flight_id     :integer
 #
 
 require 'test_helper'
