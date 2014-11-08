@@ -2,7 +2,7 @@ var app = app || {};
 app.Views = app.Views || {};
 
 app.Views.PlaneView = Backbone.View.extend({
-	el: '#planes-main',
+	el: '#main',
 	initialize: function () {},
 	render: function () {
 		var template = $('#PlaneView').html();

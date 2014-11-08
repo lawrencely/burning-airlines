@@ -5,7 +5,7 @@ app.AirlineRouter = Backbone.Router.extend({
 		'': 'index',
 		'planes': 'showPlanes',
 		'planes/:id': 'getPlane',
-    'flight/:id': 'getFlight',
+  		'flight/:id': 'getFlight',
 		'*anythingElse': 'pageNotFound'
 	},
 	index: function () {
@@ -68,7 +68,7 @@ app.AirlineRouter = Backbone.Router.extend({
       var view = new app.Views.FlightView({model: flight})
       view.render()
     }
-  };
+  }
 
 //Lawrence end//
 
