@@ -8,7 +8,26 @@
 
   <div class="container">
     <h1><a href="#">Burning Airlines</a></h1>
-    <div id="main"></div>
+    <div id="main">
+      
+        <%= form_for Flight.new do |f| %>
+    <p>
+      <%= f.label :origin %><br>
+      <%= f.text_field :origin %>
+    </p>
+
+    <p>
+      <%= f.label :destination %><br>
+      <%= f.text_field :destination %>
+    </p>
+
+    <%= f.submit placeholder="Find Flights" %>
+
+  <% end %>
+
+
+
+    </div>
   </div>
 
   <!-- Example for your handlebars
