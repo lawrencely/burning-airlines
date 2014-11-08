@@ -41,7 +41,7 @@
 
 Rails.application.routes.draw do
   
-  root :to => 'flights#home'
+  root :to => 'pages#index'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
