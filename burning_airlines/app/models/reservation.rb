@@ -14,5 +14,4 @@ class Reservation < ActiveRecord::Base
 	belongs_to :flights
 end
 
-#name for reservations
-#get rid of rows and columns
+
