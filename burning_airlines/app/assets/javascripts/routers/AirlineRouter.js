@@ -3,6 +3,7 @@ var app = app || {}
 app.AirlineRouter = Backbone.Router.extend({
 	routes: {
 		'': 'index',
+		'planes': 'showPlanes',
 		'planes/:id': 'getPlane',
 		'*anythingElse': 'pageNotFound'
 	},
@@ -20,9 +21,17 @@ app.AirlineRouter = Backbone.Router.extend({
 		}
 	},
 
- pageNotFound: function () {
-    app.router.navigate('', {trigger: true});
-  }
+	pageNotFound: function () {
+	    app.router.navigate('', {trigger: true});
+	  },
+
+//Fabian Start
+	showPlanes: function () {
+		var plane = app.planes.get(id);
+		var view = new app.Views.PlanesView({model: plane});
+		view.render();
+	},
+//Fabian End
 
 //Jacqui Start //
 

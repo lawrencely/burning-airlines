@@ -2,7 +2,7 @@ var app = app || {};
 app.Views = app.Views || {};
 
 app.Views.PlaneView = Backbone.View.extend({
-	el: '#main',
+	el: '#planes-main',
 	initialize: function () {},
 	render: function () {
 		var template = $('#PlaneView').html();
@@ -11,3 +11,4 @@ app.Views.PlaneView = Backbone.View.extend({
 		this.$el.html(planeHTML(this.model.toJSON())); //TODO: assign model
 	}
 });
+

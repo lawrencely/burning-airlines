@@ -27,3 +27,54 @@
 <br>
 
 <%= link_to 'New Plane', new_plane_path %>
+
+
+
+<div id="planes-main">
+</div>
+
+ <h2>New Plane</h2>
+  <%= form_for Plane.new do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :rows %><br>
+      <%= f.text_field :rows %>
+    </p>
+
+    <p>
+      <%= f.label :columns %><br>
+      <%= f.text_area :columns %>
+    </p>
+
+    <%= f.submit %>
+  <% end %>
+
+
+   <script type="template/html" id="planesAppView">
+    <h1>All Planes</h1>
+    <ul id="planes"></ul>
+  </script>
+
+
+  <script type="template/handlebars" id="SearchView">
+    {{ flights }}
+  </script>
+
+
+  <script type="template/handlebars" id="planesView">
+    {{ name }}
+  </script>
+
+  <script type="template/handlebars" id="planeView">
+    <div class="plane">
+      <h2>Plane: {{ name }}</h2>
+      <label>Rows:</label>
+      <p>{{ rows }}</p>
+      <label>Columns: </label>
+      <p>{{ columns }}</p>
+    </div>
+  </script>
