@@ -3,12 +3,27 @@
 <h1>Welcome to Burning Airlines</h1>
 
 <div id="main">
-  search form for flights
+
+   <%= form_for(@flights, :url => flights_path, :method => :get) do |f| %>
+    <p>
+      <%= f.label :origin %><br>
+      <%= f.text_field :origin %>
+    </p>
+
+    <p>
+      <%= f.label :destination %><br>
+      <%= f.text_field :destination %>
+    </p>
+    <%= f.submit %>
+
+  <% end %>
+
+
 </div>
 
 <!-- Fabian -->
   <h2>New Plane</h2>
-  <%= form_for Plane.new do |f| %>
+<!--   <%= form_for Plane.new do |f| %>
     <p>
       <%= f.label :name %><br>
       <%= f.text_field :name %>
@@ -25,7 +40,7 @@
     </p>
 
     <%= f.submit %>
-  <% end %>
+  <% end %> -->
 
 
    <script type="template/html" id="appView">
