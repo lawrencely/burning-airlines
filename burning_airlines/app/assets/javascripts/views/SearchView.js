@@ -1,7 +1,7 @@
 var app = app || {};
 app.Views = app.Views || {};
 
-app.Views.AppView = Backbone.View.extend({
+app.Views.SearchView = Backbone.View.extend({
 	el: '#main',
 	initialize: function () {
 		this.render();
@@ -10,8 +10,8 @@ app.Views.AppView = Backbone.View.extend({
 		var template = $('#SearchView').html();
 		this.$el.html(template);
 
-		this.collection.each(function (flight) {
-			var view = new app.Views.PlanesView({model: flight});
+		this.collection.each(function (search) {
+			var view = new app.Views.SearchView({model: search});
 			view.render();
 		});
 	}

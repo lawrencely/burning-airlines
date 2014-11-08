@@ -4,7 +4,7 @@
 
 <div id="main">
 
-   <%= form_for(@flights, :url => flights_path, :method => :get) do |f| %>
+   <%= form_for Flight.new do |f| %>
     <p>
       <%= f.label :origin %><br>
       <%= f.text_field :origin %>
@@ -14,38 +14,22 @@
       <%= f.label :destination %><br>
       <%= f.text_field :destination %>
     </p>
-    <%= f.submit %>
+
+    <%= f.submit placeholder="Find Flights" %>
 
   <% end %>
 
 
 </div>
 
-<!-- Fabian -->
-  <h2>New Plane</h2>
-<!--   <%= form_for Plane.new do |f| %>
-    <p>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </p>
-
-    <p>
-      <%= f.label :rows %><br>
-      <%= f.text_field :rows %>
-    </p>
-
-    <p>
-      <%= f.label :columns %><br>
-      <%= f.text_area :columns %>
-    </p>
-
-    <%= f.submit %>
-  <% end %> -->
-
 
    <script type="template/html" id="appView">
-    <h1>All Planes</h1>
-    <ul id="planes"></ul>
+    <h1>All Flights</h1>
+    <ul id="flights"></ul>
+  </script>
+
+  <script type="template/handlebars" id="flightView">
+    {{ flights }}
   </script>
 
 
@@ -78,25 +62,3 @@
 
 <!-- Phil -->
 <!-- Phil end -->
-
-
-<!--  
-<%= form_for Plane.new do |f| %>
-    <p>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </p>
-
-    <p>
-      <%= f.label :rows %><br>
-      <%= f.text_field :rows %>
-    </p>
-
-    <p>
-      <%= f.label :columns %><br>
-      <%= f.text_area :columns %>
-    </p>
-
-    <%= f.submit %>
-  <% end %>
-  -->
