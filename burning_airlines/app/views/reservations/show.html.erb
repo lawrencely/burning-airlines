@@ -11,14 +11,11 @@
 </p>
 
 <p>
-  <strong>Rows:</strong>
-  <%= @reservation.rows %>
+  <strong>Name:</strong>
+  <%= @reservation.name %>
 </p>
 
-<p>
-  <strong>Columns:</strong>
-  <%= @reservation.columns %>
-</p>
+
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %>

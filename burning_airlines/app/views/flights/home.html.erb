@@ -3,12 +3,39 @@
 <h1>Welcome to Burning Airlines</h1>
 
 <div id="main">
-  search form for flights
+
+   <%= form_for Flight.new do |f| %>
+    <p>
+      <%= f.label :origin %><br>
+      <%= f.text_field :origin %>
+    </p>
+
+    <p>
+      <%= f.label :destination %><br>
+      <%= f.text_field :destination %>
+    </p>
+
+    <%= f.submit placeholder="Find Flights" %>
+
+  <% end %>
+
 </div>
 
-<!-- Fabian -->
- 
-<!-- Fabian end -->
+   <script type="template/html" id="appView">
+    <h1>All Flights</h1>
+    <ul id="flights"></ul>
+  </script>
+
+  <script type="template/handlebars" id="flightView">
+    {{ flights }}
+  </script>
+
+
+  <script type="template/handlebars" id="SearchView">
+    {{ flights }}
+  </script>
+
+
 
 <!-- Jacqui -->
 <!-- Jacqui end -->

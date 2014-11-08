@@ -5,6 +5,7 @@ app.AirlineRouter = Backbone.Router.extend({
 		'': 'index',
 		'planes': 'showPlanes',
 		'planes/:id': 'getPlane',
+    'flight/:id': 'getFlight',
 		'*anythingElse': 'pageNotFound'
 	},
 	index: function () {
@@ -14,7 +15,7 @@ app.AirlineRouter = Backbone.Router.extend({
 	getPlane: function (id) {
 		var plane = app.planes.get(id);
 		if (!plane) {
-			app.router.navigate('', {trigger: true});	
+			app.router.navigate('', {trigger: true});
 		} else {
 			var view = new app.Views.PlaneView({model: plane});
 			view.render();
@@ -38,14 +39,37 @@ app.AirlineRouter = Backbone.Router.extend({
 	chooseSeat: function (id) {
 		var seat = app.flight.get(id);
     	app.flight = new app.Models.Flight();
-    
+
     	app.flight.fetch().done(function () {
       	var view = new app.Views.FlightView({model: flight});
       	view.render();
     	});
   },
+	// chooseSeat: function (id) {
+	// 	var seat = app.flight.get(id);
+ //    	app.flight = new app.Models.Flight();
+
+ //    	app.flight.fetch().done(function () {
+ //      	var view = new app.Views.FlightView({model: flight});
+ //      	view.render();
+ //    	});
+ //  },
 
 //Jacqui End //
+//Lawrence Start//
 
+  getFlight: function (id) {
+    var flight = new app.Models.Flight();
+    flight.id = id;
+    flight.fetch();
+    if (!flight) {
+      app.router.navigate('', {trigger: true });
+    } else {
+      var view = new app.Views.FlightView({model: flight})
+      view.render()
+    }
+  };
+
+//Lawrence end//
 
 });
