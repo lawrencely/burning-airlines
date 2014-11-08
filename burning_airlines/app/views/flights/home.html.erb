@@ -4,20 +4,26 @@
 
 <div id="main">
 
-   <%= form_for(@flights, :url => flights_path, :method => :get) do |f| %>
+   <%= form_for Plane.new do |f| %>
     <p>
-      <%= f.label :origin %><br>
-      <%= f.text_field :origin %>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
     </p>
 
     <p>
-      <%= f.label :destination %><br>
-      <%= f.text_field :destination %>
+      <%= f.label :rows %><br>
+      <%= f.text_field :rows %>
     </p>
+
+     <p>
+      <%= f.label :columns %><br>
+      <%= f.text_field :columns %>
+    </p>
+
+  
     <%= f.submit %>
 
   <% end %>
-
 
 </div>
 
