@@ -11,3 +11,4 @@ app.Views.PlaneView = Backbone.View.extend({
 		this.$el.html(planeHTML(this.model.toJSON())); //TODO: assign model
 	}
 });
+

@@ -8,6 +8,7 @@ app.AirlineRouter = Backbone.Router.extend({
   //   'flights': 'showFlights'
   //   'flight/:id': 'getFlight',
 		// '*anythingElse': 'pageNotFound'
+
 	},
 	// index: function () {
  //    console.log('index');
@@ -28,12 +29,27 @@ app.AirlineRouter = Backbone.Router.extend({
 //     app.router.navigate('', {trigger: true});
 //   }
 
-// //Jacqui Start //
+// // //Jacqui Start //
 
-// 	chooseSeat: function (id) {
-// 		var seat = app.flight.get(id);
-//     	app.flight = new app.Models.Flight();
+// 	pageNotFound: function () {
+// 	    app.router.navigate('', {trigger: true});
+// 	  },
 
+// //Fabian Start
+// 	showPlanes: function () {
+// 		var plane = app.planes.get(id);
+// 		var view = new app.Views.PlanesView({model: plane});
+// 		view.render();
+// 	},
+// //Fabian End
+
+// >>>>>>> a15b0493562ec857f97caf602f7f6eb0e71d0c71
+
+// // 	chooseSeat: function (id) {
+// // 		var seat = app.flight.get(id);
+// //     	app.flight = new app.Models.Flight();
+
+// <<<<<<< HEAD
 //     	app.flight.fetch().done(function () {
 //       	var view = new app.Views.FlightView({model: flight});
 //       	view.render();
@@ -60,7 +76,36 @@ app.AirlineRouter = Backbone.Router.extend({
       view.render();
     });
   }
+// =======
+	// chooseSeat: function (id) {
+	// 	var seat = app.flight.get(id);
+ //    	app.flight = new app.Models.Flight();
 
+ //    	app.flight.fetch().done(function () {
+ //      	var view = new app.Views.FlightView({model: flight});
+ //      	view.render();
+ //    	});
+ //  },
+	// chooseSeat: function (id) {
+	// 	var seat = app.flight.get(id);
+ //    	app.flight = new app.Models.Flight();
+// >>>>>>> a15b0493562ec857f97caf602f7f6eb0e71d0c71
+
+// //   getFlight: function (id) {
+// //     var flight = new app.Models.Flight();
+// //     flight.id = id;
+// //     flight.fetch();
+// //     if (!flight) {
+// //       app.router.navigate('', {trigger: true });
+// //     } else {
+// //       var view = new app.Views.FlightView({model: flight})
+// //       view.render()
+// //     }
+// //   };
+
+
+// <<<<<<< HEAD
+// =======
 //   getFlight: function (id) {
 //     var flight = new app.Models.Flight();
 //     flight.id = id;
@@ -71,9 +116,8 @@ app.AirlineRouter = Backbone.Router.extend({
 //       var view = new app.Views.FlightView({model: flight})
 //       view.render()
 //     }
-//   };
-
-
+//   }
+// >>>>>>> a15b0493562ec857f97caf602f7f6eb0e71d0c71
 
 //Lawrence end//
 

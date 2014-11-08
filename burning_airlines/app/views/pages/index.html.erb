@@ -8,7 +8,26 @@
 
   <div class="container">
     <h1><a href="#">Burning Airlines</a></h1>
-    <div id="main"></div>
+    <div id="main">
+
+        <%= form_for Flight.new do |f| %>
+    <p>
+      <%= f.label :origin %><br>
+      <%= f.text_field :origin %>
+    </p>
+
+    <p>
+      <%= f.label :destination %><br>
+      <%= f.text_field :destination %>
+    </p>
+
+    <%= f.submit placeholder="Find Flights" %>
+
+  <% end %>
+
+
+
+    </div>
   </div>
 
 
@@ -31,6 +50,69 @@
     </div>
   </script>
 <!-- lawrence end -->
+
+<!-- Fabian Start -->
+  <!-- Form to create a new plane. TODO: Create a template for it, build and render it through js -->
+ <h2>New Plane</h2>
+  <%= form_for Plane.new do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :rows %><br>
+      <%= f.text_field :rows %>
+    </p>
+
+    <p>
+      <%= f.label :columns %><br>
+      <%= f.text_area :columns %>
+    </p>
+
+    <%= f.submit %>
+  <% end %>
+
+  <!-- Template that is used and rendered when all planes shall be shown. Will create a ul that is then filled with an li for each plane with the next template (planesView) -->
+   <script type="template/html" id="AppView">
+    <h1>All Planes</h1>
+    <ul id="planes"></ul>
+  </script>
+
+  <!-- Template to show a separate plane name (as li in a ul) that links to the planeView-->
+  <script type="template/handlebars" id="planesView">
+    {{ name }}
+  </script>
+
+  <!-- Template to show all information for a specific plane -->
+  <script type="template/handlebars" id="planeView">
+    <div class="plane">
+      <h2>Plane: {{ name }}</h2>
+      <label>Rows:</label>
+      <p>{{ rows }}</p>
+      <label>Columns: </label>
+      <p>{{ columns }}</p>
+    </div>
+  </script>
+
+  <script>
+    $('#new_plane').on('submit', function (event) {
+      event.preventDefault();
+
+      var newPlane = new app.Models.Plane();
+      newPlane.set('name', $('#plane_name').val());
+      newPlane.set('rows', $('#plane_rows').val());
+      newPlane.set('columns', $('#plane_columns').val());
+
+      newPlane.save().done(function () {
+        app.planes.fetch();
+        app.router.navigate('planes', {trigger: true});
+    });
+
+    this.reset();
+    });
+  </script>
+<!-- Fabian End -->
 
 </body>
 </html>

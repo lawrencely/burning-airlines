@@ -18,3 +18,4 @@ app.Views.PlanesView = Backbone.View.extend({
 		app.router.navigate('planes/' + this.model.get('id'), {trigger: true});
 	}
 });
+

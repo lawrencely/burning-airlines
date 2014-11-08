@@ -4,8 +4,8 @@ class PlanesController < ApplicationController
   # GET /planes
   # GET /planes.json
 
-  def home
-  end
+  # def home
+  # end
   
   def index
     @planes = Plane.all
