@@ -1,0 +1,13 @@
+var app = app || {};
+app.Views = app.Views || {};
+
+app.Views.FlightView = Backbone.View.extend({
+  el: '#main',
+  initialize: function () {},
+  render: function () {
+    var template = $('#flightView').html();
+    var postHTML = Handlebars.compile(template);
+
+    this.$el.html(postHTML(this.model.toJSON()));
+  }
+});

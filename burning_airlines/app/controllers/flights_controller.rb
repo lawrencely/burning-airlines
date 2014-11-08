@@ -14,7 +14,7 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
-    @flights = Flight.all
+    
   end
 
   # GET /flights/new

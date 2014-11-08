@@ -26,15 +26,15 @@ app.AirlineRouter = Backbone.Router.extend({
 
 //Jacqui Start //
 
-	chooseSeat: function (id) {
-		var seat = app.flight.get(id);
-    	app.flight = new app.Models.Flight();
+	// chooseSeat: function (id) {
+	// 	var seat = app.flight.get(id);
+ //    	app.flight = new app.Models.Flight();
     
-    	app.flight.fetch().done(function () {
-      	var view = new app.Views.FlightView({model: flight});
-      	view.render();
-    	});
-  },
+ //    	app.flight.fetch().done(function () {
+ //      	var view = new app.Views.FlightView({model: flight});
+ //      	view.render();
+ //    	});
+ //  },
 
 //Jacqui End //
 
