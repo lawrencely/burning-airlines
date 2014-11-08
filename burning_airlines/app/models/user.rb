@@ -11,8 +11,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :reservations 
-  has_many :flights, through: :reservations 
+  has_many :reservations
 	has_secure_password
 
 	validates :name, presence: true, uniqueness: true, length: {minimum: 3}

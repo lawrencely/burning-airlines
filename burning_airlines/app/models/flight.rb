@@ -15,6 +15,6 @@
 class Flight < ActiveRecord::Base
   belongs_to :planes
   has_many :reservations
-
-  accepts_nested_attributes_for :planes, :reservations
 end
+
+#rid of flight id

@@ -5,12 +5,13 @@
 #  id         :integer          not null, primary key
 #  flight_id  :integer
 #  user_id    :integer
-#  rows       :integer
-#  columns    :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  name       :string(255)
 #
 
 class Reservation < ActiveRecord::Base
 	belongs_to :flights
 end
+
+
