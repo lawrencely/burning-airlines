@@ -1,7 +1,10 @@
 # == Route Map
 #
 #           Prefix Verb   URI Pattern                      Controller#Action
-#             root GET    /                                planes#home
+#             root GET    /                                flights#home
+#            login GET    /login(.:format)                 session#new
+#                  POST   /login(.:format)                 session#create
+#                  DELETE /login(.:format)                 session#destroy
 #     reservations GET    /reservations(.:format)          reservations#index
 #                  POST   /reservations(.:format)          reservations#create
 #  new_reservation GET    /reservations/new(.:format)      reservations#new

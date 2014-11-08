@@ -10,6 +10,7 @@
 #  plane_id      :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  flight_id     :integer
 #
 
 class Flight < ActiveRecord::Base
