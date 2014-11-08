@@ -1,5 +1,5 @@
 var app = app || {};
-app.Views. = app.Views || {};
+app.Views = app.Views || {};
 
 app.Views.PlanesView = Backbone.View.extend({
 	tagName: 'li',
