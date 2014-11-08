@@ -17,6 +17,50 @@
     <ul id="posts"></ul>
    </script> -->
 
+<!-- Fabian Start -->
+  <!-- Form to create a new plane. TODO: Create a template for it, build and render it through js -->
+ <h2>New Plane</h2>
+  <%= form_for Plane.new do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :rows %><br>
+      <%= f.text_field :rows %>
+    </p>
+
+    <p>
+      <%= f.label :columns %><br>
+      <%= f.text_area :columns %>
+    </p>
+
+    <%= f.submit %>
+  <% end %>
+
+  <!-- Template that is used and rendered when all planes shall be shown. Will create a ul that is then filled with an li for each plane with the next template (planesView) -->
+   <script type="template/html" id="AppView">
+    <h1>All Planes</h1>
+    <ul id="planes"></ul>
+  </script>
+
+  <!-- Template to show a separate plane name (as li in a ul) that links to the planeView-->
+  <script type="template/handlebars" id="planesView">
+    {{ name }}
+  </script>
+
+  <!-- Template to show all information for a specific plane -->
+  <script type="template/handlebars" id="planeView">
+    <div class="plane">
+      <h2>Plane: {{ name }}</h2>
+      <label>Rows:</label>
+      <p>{{ rows }}</p>
+      <label>Columns: </label>
+      <p>{{ columns }}</p>
+    </div>
+  </script>
+<!-- Fabian End -->
 
 </body>
 </html>
