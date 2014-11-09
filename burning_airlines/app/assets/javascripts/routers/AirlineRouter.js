@@ -7,6 +7,8 @@ app.AirlineRouter = Backbone.Router.extend({
 		'planes/:id': 'getPlane',
    // 'flight': 'getFlight'
     'flight/:id': 'getFlight',
+    'reservations': 'showReservations',
+    // 'reservation/:id': 'getReservation'
 		// '*anythingElse': 'pageNotFound'
 
 	},
@@ -33,6 +35,31 @@ app.AirlineRouter = Backbone.Router.extend({
 //     app.router.navigate('', {trigger: true});
 //   }
 
+
+/// Phil
+ // getReservation: function (id) {
+ //    var reservation = new app.Models.Reservation({id: id});
+ //    reservation.fetch({
+ //      success: function (reservation) {
+ //         var view = new app.Views.ReservationView({model: reservation});
+ //         view.render();
+ //         $('#main').html(view.$el);
+ //      }
+ //    });
+ //  }
+
+ //   showReservations: function () {
+ //    var reservations = new app.Collections.Reservations();
+ //    reservations.fetch({
+ //      success: function(res) {
+ //        var view = new app.Views.ReservationsView({ collection: res});
+ //      view.render();
+ //      },
+ //    });
+ //  },
+
+
+//// Phil
 // // //Jacqui Start //
 
 // 	pageNotFound: function () {
@@ -120,6 +147,8 @@ app.AirlineRouter = Backbone.Router.extend({
       }
     });
   }
+
+ 
 
 
 

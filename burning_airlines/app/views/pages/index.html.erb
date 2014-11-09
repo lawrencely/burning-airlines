@@ -10,43 +10,10 @@
 
     <h1><a href="#"><p id="fire">Burning Airlines</p></h1>
     <p><a href="#planes">Show all planes</a></p>
+    <p><a href="#reservations">Show all reservations</a></p>
     <div id="main">
 
-       <!--  <%= form_for Flight.new do |f| %>
-    <p>
-      <%= f.label :origin %><br>
-      <%= f.text_field :origin %>
-    </p>
-
-    <p>
-      <%= f.label :destination %><br>
-      <%= f.text_field :destination %>
-    </p>
-
-    <%= f.submit placeholder="Create Flight" %>
-
-  <% end %> -->
-
-    <!-- Form to create a new plane. TODO: Create a template for it, build and render it through js -->
- <!-- <h2>New Plane</h2>
-  <%= form_for Plane.new do |f| %>
-    <p>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </p>
-
-    <p>
-      <%= f.label :rows %><br>
-      <%= f.text_field :rows %>
-    </p>
-
-    <p>
-      <%= f.label :columns %><br>
-      <%= f.text_area :columns %>
-    </p>
-
-    <%= f.submit %>
-  <% end %> -->
+    
 
 
 
@@ -59,6 +26,24 @@
     <h1>Recent Posts</h1>
     <ul id="posts"></ul>
    </script> -->
+
+  <script type="template/handlebars" id="ReservationView">
+    <h1>Reservation</h2>
+   <p> Flight: {{ flight_id }}</p>
+    <p> Passenger: {{ user_id }}</p>
+    <p> Name: {{ name }}</p>
+  </script>
+
+  <script type="template/handlebars" id="ReservationsView">
+  <h1> Showing all Reservations </h1>
+    <div id="reservations">
+      {{#each reservation }}
+        <div>Reservation: <a href="#reservation/{{ id }}">{{ flight_id }}</a>
+        Passenger: {{ user_id }} -
+        Name: {{name}}</div>
+      {{/each}}
+    </div>
+  </script>
 
 <!-- lawrence -->
   <script type="template/handlebars" id="flightView">
