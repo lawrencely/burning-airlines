@@ -10,7 +10,6 @@ app.Views.FlightListView = Backbone.View.extend({
   },
   initialize: function () {},
   render: function () {
-    // debugger;
     console.log('flight list view .js')
     var template = $('#flightListView').html();
     var flightListHTML = Handlebars.compile(template);
