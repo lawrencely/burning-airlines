@@ -8,9 +8,10 @@
 
   <div class="container">
     <h1><a href="#">Burning Airlines</a></h1>
+    <p><a href="#planes">Show all planes</a></p>
     <div id="main">
 
-        <%= form_for Flight.new do |f| %>
+       <!--  <%= form_for Flight.new do |f| %>
     <p>
       <%= f.label :origin %><br>
       <%= f.text_field :origin %>
@@ -23,10 +24,10 @@
 
     <%= f.submit placeholder="Create Flight" %>
 
-  <% end %>
+  <% end %> -->
 
     <!-- Form to create a new plane. TODO: Create a template for it, build and render it through js -->
- <h2>New Plane</h2>
+ <!-- <h2>New Plane</h2>
   <%= form_for Plane.new do |f| %>
     <p>
       <%= f.label :name %><br>
@@ -44,7 +45,7 @@
     </p>
 
     <%= f.submit %>
-  <% end %>
+  <% end %> -->
 
 
 
@@ -73,7 +74,8 @@
         <div>Flight Number: <a href="#flight/{{ id }}">{{ flight_number }}</a>
         Origin:{{ origin }} -
         Destination: {{ destination }} -
-        Plane Id:{{ plane_id }}</div>
+        Plane Id:{{ plane_id }}
+        Date: {{ date }}</div>
       {{/each}}
     </div>
   </script>
@@ -81,11 +83,32 @@
 
 <!-- Fabian Start -->
 
-  <!-- Template that is used and rendered when all planes shall be shown. Will create a ul that is then filled with an li for each plane with the next template (planesView) -->
-   <script type="template/html" id="AppView">
-    <h1>All Planes</h1>
-    <ul id="planes"></ul>
+  <script type="template/handlebars" id="planeView">
+    <h1>Single Plane View</h2>
+    #{{ name }}
+    <p> rows: {{ rows }}</p>
+    <p> columns: {{ columns }}</p>
   </script>
+
+  <script type="template/handlebars" id="planesView">
+  <h1> showing all planes </h1>
+    <div id="planes">
+    {{#each plane }}
+        <div>Plane name: <a href="#planes/{{ id }}">{{ name }}</a>
+        Rows:{{ rows }} -
+        Columns: {{ columns }} -
+        Id:{{ id }}
+        </div>
+    {{/each}}
+    </div>
+  </script>
+
+
+  <!-- Template that is used and rendered when all planes shall be shown. Will create a ul that is then filled with an li for each plane with the next template (planesView) -->
+  //  <script type="template/html" id="AppView">
+  //   <h1>All Planes</h1>
+  //   <ul id="planes"></ul>
+  // </script>
 
   <!-- Template to show a separate plane name (as li in a ul) that links to the planeView-->
   <script type="template/handlebars" id="planesView">

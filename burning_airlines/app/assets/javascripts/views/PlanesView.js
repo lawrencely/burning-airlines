@@ -11,11 +11,11 @@ app.Views.PlanesView = Backbone.View.extend({
 		var template = $('#planesView').html();
 		var planesHTML = Handlebars.compile(template);
 
-		this.$el.html(planesHTML(this.model.toJSON()));
-		$('#planes').append(this.el);
+		this.$el.html(planesHTML({plane: this.collection.toJSON()}));
+		$('#main').append(this.el);
 	},
 	viewPlane: function () {
-		app.router.navigate('planes/' + this.model.get('id'), {trigger: true});
+		// app.router.navigate('planes/' + this.model.get('id'), {trigger: true});
 	}
 });
 
