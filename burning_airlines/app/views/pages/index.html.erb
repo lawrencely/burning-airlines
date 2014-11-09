@@ -21,38 +21,11 @@
       <%= f.text_field :destination %>
     </p>
 
-    <%= f.submit placeholder="Find Flights" %>
+    <%= f.submit placeholder="Create Flight" %>
 
   <% end %>
 
-
-
-    </div>
-  </div>
-
-
-  <!-- Example for your handlebars
-   <script type="template/html" id="flightViews">
-    <h1>Recent Posts</h1>
-    <ul id="posts"></ul>
-   </script> -->
-
-<!-- lawrence -->
-  <script type="template/html" id="flightView">
-    <h1>Single Flight View</h2>
-    {{ flight }}
-  </script>
-
-  <script type="template/handlebars" id="flightListView">
-  <h1>showing all flights </h1>
-    <div id="flights">
-      {{ flight }}
-    </div>
-  </script>
-<!-- lawrence end -->
-
-<!-- Fabian Start -->
-  <!-- Form to create a new plane. TODO: Create a template for it, build and render it through js -->
+    <!-- Form to create a new plane. TODO: Create a template for it, build and render it through js -->
  <h2>New Plane</h2>
   <%= form_for Plane.new do |f| %>
     <p>
@@ -72,6 +45,41 @@
 
     <%= f.submit %>
   <% end %>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- Example for your handlebars
+   <script type="template/html" id="flightViews">
+    <h1>Recent Posts</h1>
+    <ul id="posts"></ul>
+   </script> -->
+
+<!-- lawrence -->
+  <script type="template/handlebars" id="flightView">
+    <h1>Single Flight View</h2>
+    #{{ flight_number }}
+    <p> origin: {{ origin }}</p>
+    <p> des: {{ destination }}</p>
+  </script>
+
+  <script type="template/handlebars" id="flightListView">
+  <h1> showing all flights </h1>
+    <div id="flights">
+      {{#each flight }}
+        <div>Flight Number: <a href="#flight/{{ id }}">{{ flight_number }}</a>
+        Origin:{{ origin }} -
+        Destination: {{ destination }} -
+        Plane Id:{{ plane_id }}</div>
+      {{/each}}
+    </div>
+  </script>
+<!-- lawrence end -->
+
+<!-- Fabian Start -->
 
   <!-- Template that is used and rendered when all planes shall be shown. Will create a ul that is then filled with an li for each plane with the next template (planesView) -->
    <script type="template/html" id="AppView">

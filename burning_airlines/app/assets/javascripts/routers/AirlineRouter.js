@@ -1,15 +1,16 @@
 var app = app || {};
-var flights = flights || {};
 
 app.AirlineRouter = Backbone.Router.extend({
 	routes: {
-		'': 'showFlights'
+		'': 'showFlights',
 		// 'planes/:id': 'getPlane',
-  //   'flights': 'showFlights'
-  //   'flight/:id': 'getFlight',
+   // 'flight': 'getFlight'
+    'flight/:id': 'getFlight',
 		// '*anythingElse': 'pageNotFound'
 
 	},
+
+
 	// index: function () {
  //    console.log('index');
 	// 	new app.Views.AppView({collection: app.planes});
@@ -70,12 +71,15 @@ app.AirlineRouter = Backbone.Router.extend({
 
   showFlights: function () {
     console.log('show flights')
-    var flights = new app.Collections.Flights;
-    flights.fetch().done(function (flights) {
-      var view = new app.Views.FlightListView({ collection: flights});
+    var flights = new app.Collections.Flights();
+    flights.fetch({
+      success: function(fli) {
+        var view = new app.Views.FlightListView({ collection: fli});
       view.render();
+
+      }
     });
-  }
+  },
 // =======
 	// chooseSeat: function (id) {
 	// 	var seat = app.flight.get(id);
@@ -91,17 +95,17 @@ app.AirlineRouter = Backbone.Router.extend({
  //    	app.flight = new app.Models.Flight();
 // >>>>>>> a15b0493562ec857f97caf602f7f6eb0e71d0c71
 
-// //   getFlight: function (id) {
-// //     var flight = new app.Models.Flight();
-// //     flight.id = id;
-// //     flight.fetch();
-// //     if (!flight) {
-// //       app.router.navigate('', {trigger: true });
-// //     } else {
-// //       var view = new app.Views.FlightView({model: flight})
-// //       view.render()
-// //     }
-// //   };
+  getFlight: function (id) {
+    var flight = new app.Models.Flight({id: id});
+    flight.fetch({
+      success: function (flight) {
+         var view = new app.Views.FlightView({model: flight});
+         view.render();
+         $('#main').html(view.$el);
+      }
+    });
+  }
+
 
 
 // <<<<<<< HEAD

@@ -1,6 +1,6 @@
 var app = app || {};
 app.Views = app.Views || {};
-var flights = flights || {};
+
 
 
 app.Views.FlightListView = Backbone.View.extend({
@@ -10,13 +10,14 @@ app.Views.FlightListView = Backbone.View.extend({
   },
   initialize: function () {},
   render: function () {
+    // debugger;
     console.log('flight list view .js')
     var template = $('#flightListView').html();
     var flightListHTML = Handlebars.compile(template);
-    this.$el.html(flightListHTML(flights.toJSON()));
+    this.$el.html(flightListHTML({flight: this.collection.toJSON()}));
     $('#main').append(this.el);
   },
   viewFlight: function () {
-    app.router.navigate('flights/' + this.model.get('reservations'), {trigger: true});
+    // app.router.navigate('flights/' + this.model.get('reservations'), {trigger: true});
   }
 });

@@ -4,7 +4,7 @@
   	return;
   };
 //phil
-  app.flights = new app.Collection.Flights();
+  // app.flights = new app.Collection.Flights();
 
   console.log('burning airlines.js');
   app.router = new app.AirlineRouter();
